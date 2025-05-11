@@ -11,7 +11,6 @@
       font-family: sans-serif;
       text-align: center;
       margin: 0;
-      padding: 0;
     }
 
     h1 {
@@ -64,7 +63,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -97,10 +96,6 @@
     .cerrar-btn:hover {
       background-color: black;
     }
-
-    .overlay .volver-btn {
-      margin-top: 20px;
-    }
   </style>
 </head>
 <body>
@@ -116,14 +111,13 @@
     <img src="imagen6.jpg" alt="Imagen 6" onclick="abrirImagen(this.src)">
   </div>
 
-  <!-- Solo un botón abajo -->
+  <!-- Solo un botón al final -->
   <a href="index.html" class="volver-btn">← Volver al inicio</a>
 
-  <!-- Imagen ampliada con overlay -->
+  <!-- Overlay para imagen ampliada -->
   <div class="overlay" id="overlay">
     <button class="cerrar-btn" onclick="cerrarImagen()">×</button>
     <img id="imagenAmpliada" src="" alt="Imagen ampliada">
-    <a href="galeria.html" class="volver-btn">← Volver a la galería</a>
   </div>
 
   <script>
@@ -139,4 +133,3 @@
 
 </body>
 </html>
-
