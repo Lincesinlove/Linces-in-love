@@ -1,93 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Galería de Imágenes</title>
-    <style>
-        body {
-            background-color: white;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            transition: background-color 0.4s ease;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería de Imágenes</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: sans-serif;
+      text-align: center;
+    }
 
-        h1 {
-            text-align: center;
-            color: red;
-            margin-top: 30px;
-        }
+    h1 {
+      color: red;
+    }
 
-        .galeria {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 30px;
-            gap: 20px;
-        }
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .imagen-galeria {
-            border: 5px solid red;
-            padding: 5px;
-            background-color: white;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    .galeria img {
+      width: 250px;
+      height: auto;
+      border: 5px solid red;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
-        .imagen-galeria:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px black;
-        }
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    }
 
-        .imagen-galeria img {
-            width: 250px;
-            height: auto;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .volver-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
 
-        .volver {
-            display: block;
-            margin: 20px auto;
-            width: fit-content;
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            border: 2px solid red;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .volver:hover {
-            background-color: red;
-        }
-    </style>
+    .volver-btn:hover {
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
-    <h1>Galería de Imágenes</h1>
-    <div class="galeria">
-        <div class="imagen-galeria"><img src="img/imagen1.jpg" alt="Imagen 1" onclick="abrir(this.src)"></div>
-        <div class="imagen-galeria"><img src="img/imagen2.jpg" alt="Imagen 2" onclick="abrir(this.src)"></div>
-        <div class="imagen-galeria"><img src="img/imagen3.jpg" alt="Imagen 3" onclick="abrir(this.src)"></div>
-        <div class="imagen-galeria"><img src="img/imagen4.jpg" alt="Imagen 4" onclick="abrir(this.src)"></div>
-        <div class="imagen-galeria"><img src="img/imagen5.jpg" alt="Imagen 5" onclick="abrir(this.src)"></div>
-        <div class="imagen-galeria"><img src="img/imagen6.jpg" alt="Imagen 6" onclick="abrir(this.src)"></div>
-    </div>
 
-    <a href="index.html" class="volver">Volver al Inicio</a>
+  <h1>Galería de Imágenes</h1>
 
-    <script>
-        function abrir(ruta) {
-            window.open(ruta, "_blank");
-        }
-
-        document.body.addEventListener("mousemove", (e) => {
-            const r = Math.floor(255 * (e.clientX / window.innerWidth));
-            const g = Math.floor(0);
-            const b = Math.floor(255 * (e.clientY / window.innerHeight));
-            document.body.style.backgroundColor = `rgb(${r},${g},${b}, 0.2)`;
-        });
-    </script>
-</body>
-</html>
+  <div class="galeria">
+    <a href="imagen1.jpg" target="_blank"><img src="imagen1.jpg" alt="Imagen 1" /></a>
+    <a href="imagen2.jpg" target="_blank"><img src="imagen2.jpg" alt="Imagen 2" /></a>
+    <a href="imagen3.jpg" target="_blank"><img src="imagen3.jpg" alt="Imagen 3" /></a>
+    <a href="imagen4.jpg" target="_blank"><img src="imagen4.jpg" alt="Imagen 4" /></a>
+    <a href="imagen5.jpg" target="_blank"><img src="imagen5.jpg" alt="Imagen 5" /></a>
+    <a href="imagen6.jpg" target="_blank"><img src="imagen6.jpg_
