@@ -10,12 +10,10 @@
       color: black;
       font-family: sans-serif;
       text-align: center;
-      margin: 0;
     }
 
     h1 {
       color: red;
-      margin-top: 20px;
     }
 
     .galeria {
@@ -42,7 +40,7 @@
 
     .volver-btn {
       display: inline-block;
-      margin: 30px 0;
+      margin: 20px auto;
       padding: 10px 20px;
       background-color: red;
       color: white;
@@ -58,12 +56,15 @@
       background-color: black;
     }
 
+    /* Modal */
     .overlay {
-      display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.9);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -81,20 +82,15 @@
       position: absolute;
       top: 20px;
       right: 30px;
-      background: red;
+      font-size: 40px;
+      background: none;
       color: white;
       border: none;
-      border-radius: 50%;
-      font-size: 24px;
-      width: 40px;
-      height: 40px;
       cursor: pointer;
-      font-weight: bold;
-      line-height: 40px;
     }
 
     .cerrar-btn:hover {
-      background-color: black;
+      color: red;
     }
   </style>
 </head>
@@ -103,25 +99,25 @@
   <h1>Galería de Imágenes</h1>
 
   <div class="galeria">
-    <img src="imagen1.jpg" alt="Imagen 1" onclick="abrirImagen(this.src)">
-    <img src="imagen2.jpg" alt="Imagen 2" onclick="abrirImagen(this.src)">
-    <img src="imagen3.jpg" alt="Imagen 3" onclick="abrirImagen(this.src)">
-    <img src="imagen4.jpg" alt="Imagen 4" onclick="abrirImagen(this.src)">
-    <img src="imagen5.jpg" alt="Imagen 5" onclick="abrirImagen(this.src)">
-    <img src="imagen6.jpg" alt="Imagen 6" onclick="abrirImagen(this.src)">
+    <img src="imagen1.jpg" alt="Imagen 1" onclick="ampliarImagen(this.src)">
+    <img src="imagen2.jpg" alt="Imagen 2" onclick="ampliarImagen(this.src)">
+    <img src="imagen3.jpg" alt="Imagen 3" onclick="ampliarImagen(this.src)">
+    <img src="imagen4.jpg" alt="Imagen 4" onclick="ampliarImagen(this.src)">
+    <img src="imagen5.jpg" alt="Imagen 5" onclick="ampliarImagen(this.src)">
+    <img src="imagen6.jpg" alt="Imagen 6" onclick="ampliarImagen(this.src)">
   </div>
 
-  <!-- Solo un botón al final -->
+  <!-- Botón solo al final -->
   <a href="index.html" class="volver-btn">← Volver al inicio</a>
 
-  <!-- Overlay para imagen ampliada -->
+  <!-- Modal -->
   <div class="overlay" id="overlay">
     <button class="cerrar-btn" onclick="cerrarImagen()">×</button>
     <img id="imagenAmpliada" src="" alt="Imagen ampliada">
   </div>
 
   <script>
-    function abrirImagen(src) {
+    function ampliarImagen(src) {
       document.getElementById('imagenAmpliada').src = src;
       document.getElementById('overlay').style.display = 'flex';
     }
