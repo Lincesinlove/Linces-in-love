@@ -10,10 +10,13 @@
       color: black;
       font-family: sans-serif;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
       color: red;
+      margin-top: 20px;
     }
 
     .galeria {
@@ -40,7 +43,7 @@
 
     .volver-btn {
       display: inline-block;
-      margin: 20px;
+      margin: 30px 0;
       padding: 10px 20px;
       background-color: red;
       color: white;
@@ -55,26 +58,85 @@
     .volver-btn:hover {
       background-color: black;
     }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 80%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .cerrar-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 40px;
+    }
+
+    .cerrar-btn:hover {
+      background-color: black;
+    }
+
+    .overlay .volver-btn {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Botón arriba -->
-  <a href="index.html" class="volver-btn">← Volver al inicio</a>
-
   <h1>Galería de Imágenes</h1>
 
   <div class="galeria">
-    <a href="imagen1.jpg" target="_blank"><img src="imagen1.jpg" alt="Imagen 1" /></a>
-    <a href="imagen2.jpg" target="_blank"><img src="imagen2.jpg" alt="Imagen 2" /></a>
-    <a href="imagen3.jpg" target="_blank"><img src="imagen3.jpg" alt="Imagen 3" /></a>
-    <a href="imagen4.jpg" target="_blank"><img src="imagen4.jpg" alt="Imagen 4" /></a>
-    <a href="imagen5.jpg" target="_blank"><img src="imagen5.jpg" alt="Imagen 5" /></a>
-    <a href="imagen6.jpg" target="_blank"><img src="imagen6.jpg" alt="Imagen 6" /></a>
+    <img src="imagen1.jpg" alt="Imagen 1" onclick="abrirImagen(this.src)">
+    <img src="imagen2.jpg" alt="Imagen 2" onclick="abrirImagen(this.src)">
+    <img src="imagen3.jpg" alt="Imagen 3" onclick="abrirImagen(this.src)">
+    <img src="imagen4.jpg" alt="Imagen 4" onclick="abrirImagen(this.src)">
+    <img src="imagen5.jpg" alt="Imagen 5" onclick="abrirImagen(this.src)">
+    <img src="imagen6.jpg" alt="Imagen 6" onclick="abrirImagen(this.src)">
   </div>
 
-  <!-- Botón abajo -->
+  <!-- Solo un botón abajo -->
   <a href="index.html" class="volver-btn">← Volver al inicio</a>
+
+  <!-- Imagen ampliada con overlay -->
+  <div class="overlay" id="overlay">
+    <button class="cerrar-btn" onclick="cerrarImagen()">×</button>
+    <img id="imagenAmpliada" src="" alt="Imagen ampliada">
+    <a href="galeria.html" class="volver-btn">← Volver a la galería</a>
+  </div>
+
+  <script>
+    function abrirImagen(src) {
+      document.getElementById('imagenAmpliada').src = src;
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function cerrarImagen() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
+
