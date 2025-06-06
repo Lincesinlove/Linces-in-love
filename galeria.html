@@ -5,127 +5,254 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Comunidad Lince - UVM</title>
 <style>
-   body {
-     background-color: white;
-     color: black;
-     font-family: 'Segoe UI', sans-serif;
-     margin: 0;
-     padding: 0;
-   }
-   header, footer {
-     background-color: #a00000;
-     color: white;
-     text-align: center;
-     padding: 20px;
-   }
-   h1 {
-     margin: 0;
-     font-size: 2.5rem;
-   }
-   .galeria {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 20px;
-     padding: 30px 20px;
-   }
-   .galeria img {
-     width: 250px;
-     border: 5px solid red;
-     border-radius: 10px;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-     cursor: pointer;
-   }
-   .galeria img:hover {
-     transform: scale(1.05);
-     box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-   }
-   .btn {
-     display: inline-block;
-     margin: 20px 10px;
-     padding: 12px 24px;
-     background-color: red;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     font-size: 16px;
-     cursor: pointer;
-     text-decoration: none;
-     transition: background-color 0.3s ease;
-   }
-   .btn:hover {
-     background-color: black;
-   }
-   .overlay {
-     display: none;
-     position: fixed;
-     top: 0; left: 0;
-     width: 100%; height: 100%;
-     background-color: rgba(0, 0, 0, 0.9);
-     justify-content: center;
-     align-items: center;
-     z-index: 999;
-     flex-direction: column;
-   }
-   .overlay img {
-     max-width: 90%;
-     max-height: 80%;
-     border: 5px solid white;
-     border-radius: 10px;
-   }
-   .cerrar-btn {
-     position: absolute;
-     top: 20px;
-     right: 30px;
-     font-size: 40px;
-     color: white;
-     background: none;
-     border: none;
-     cursor: pointer;
-   }
-   .cerrar-btn:hover {
-     color: red;
-   }
-   #blog {
-     display: none;
-     padding: 20px 30px;
-   }
-   #blog h2 {
-     color: red;
-   }
-   article {
-     border-left: 5px solid red;
-     background-color: #f9f9f9;
-     border-radius: 10px;
-     padding: 20px;
-     margin: 20px auto;
-     max-width: 650px;
-     text-align: left;
-   }
-   footer {
-     margin-top: 40px;
-   }
-   .redes {
-     margin-top: 10px;
-   }
-   .redes a {
-     margin: 0 10px;
-     text-decoration: none;
-     color: white;
-     font-size: 20px;
-     transition: color 0.3s ease;
-   }
-   .redes a:hover {
-     color: yellow;
-   }
-   .contacto {
-     margin-top: 10px;
-     font-size: 14px;
-   }
+
+    body {
+
+      background-color: white;
+
+      color: black;
+
+      font-family: 'Segoe UI', sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    header, footer {
+
+      background-color: #a00000;
+
+      color: white;
+
+      text-align: center;
+
+      padding: 20px;
+
+    }
+
+    header img {
+
+      height: 60px;
+
+      margin-bottom: 10px;
+
+    }
+
+    h1 {
+
+      margin: 0;
+
+      font-size: 2.5rem;
+
+    }
+
+    .galeria {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 20px;
+
+      padding: 30px 20px;
+
+    }
+
+    .galeria img {
+
+      width: 250px;
+
+      border: 5px solid red;
+
+      border-radius: 10px;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      cursor: pointer;
+
+    }
+
+    .galeria img:hover {
+
+      transform: scale(1.05);
+
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+
+    }
+
+    .btn {
+
+      display: inline-block;
+
+      margin: 20px 10px;
+
+      padding: 12px 24px;
+
+      background-color: red;
+
+      color: white;
+
+      border: none;
+
+      border-radius: 5px;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      text-decoration: none;
+
+      transition: background-color 0.3s ease;
+
+    }
+
+    .btn:hover {
+
+      background-color: black;
+
+    }
+
+    .overlay {
+
+      display: none;
+
+      position: fixed;
+
+      top: 0; left: 0;
+
+      width: 100%; height: 100%;
+
+      background-color: rgba(0, 0, 0, 0.9);
+
+      justify-content: center;
+
+      align-items: center;
+
+      z-index: 999;
+
+      flex-direction: column;
+
+    }
+
+    .overlay img {
+
+      max-width: 90%;
+
+      max-height: 80%;
+
+      border: 5px solid white;
+
+      border-radius: 10px;
+
+    }
+
+    .cerrar-btn {
+
+      position: absolute;
+
+      top: 20px;
+
+      right: 30px;
+
+      font-size: 40px;
+
+      color: white;
+
+      background: none;
+
+      border: none;
+
+      cursor: pointer;
+
+    }
+
+    .cerrar-btn:hover {
+
+      color: red;
+
+    }
+
+    #blog {
+
+      display: none;
+
+      padding: 20px 30px;
+
+    }
+
+    #blog h2 {
+
+      color: red;
+
+    }
+
+    article {
+
+      border-left: 5px solid red;
+
+      background-color: #f9f9f9;
+
+      border-radius: 10px;
+
+      padding: 20px;
+
+      margin: 20px auto;
+
+      max-width: 650px;
+
+      text-align: left;
+
+    }
+
+    footer {
+
+      margin-top: 40px;
+
+    }
+
+    .redes {
+
+      margin-top: 10px;
+
+    }
+
+    .redes a {
+
+      margin: 0 10px;
+
+      text-decoration: none;
+
+      color: white;
+
+      font-size: 20px;
+
+      transition: color 0.3s ease;
+
+    }
+
+    .redes a:hover {
+
+      color: yellow;
+
+    }
+
+    .contacto {
+
+      margin-top: 10px;
+
+      font-size: 14px;
+
+    }
 </style>
 </head>
 <body>
 <header>
+<!-- Agrega aquí el logo real de la UVM -->
+<img src="logo-uvm.png" alt="Logo UVM">
 <h1>Comunidad Lince UVM</h1>
 <p>Fortaleciendo los lazos entre estudiantes</p>
 </header>
@@ -139,6 +266,7 @@
 </div>
 <div style="text-align:center;">
 <a href="#" class="btn" onclick="mostrarBlog()">Ir al Blog</a>
+<a href="#" class="btn" onclick="mostrarInicio()">Ir al Inicio</a>
 </div>
 <!-- BLOG -->
 <section id="blog">
@@ -157,7 +285,8 @@
 <p>Un mural donde puedes dejar mensajes anónimos positivos, chistosos o de agradecimiento a cualquier lince. A veces, una palabra puede cambiarle el día a alguien.</p>
 </article>
 <div style="text-align:center;">
-<a href="#" class="btn" onclick="mostrarGaleria()">← Volver a la Galería</a>
+<a href="#" class="btn" onclick="mostrarGaleria()">← Ver Galería</a>
+<a href="#" class="btn" onclick="mostrarInicio()">Ir al Inicio</a>
 </div>
 </section>
 <!-- MODAL IMAGEN -->
@@ -179,23 +308,59 @@
 </div>
 </footer>
 <script>
-   function ampliarImagen(src) {
-     document.getElementById("imagenAmpliada").src = src;
-     document.getElementById("overlay").style.display = "flex";
-   }
-   function cerrarImagen() {
-     document.getElementById("overlay").style.display = "none";
-   }
-   function mostrarBlog() {
-     document.getElementById("galeria").style.display = "none";
-     document.getElementById("blog").style.display = "block";
-     document.querySelector("header h1").textContent = "Blog Comunidad Lince";
-   }
-   function mostrarGaleria() {
-     document.getElementById("galeria").style.display = "flex";
-     document.getElementById("blog").style.display = "none";
-     document.querySelector("header h1").textContent = "Comunidad Lince UVM";
-   }
+
+    function ampliarImagen(src) {
+
+      document.getElementById("imagenAmpliada").src = src;
+
+      document.getElementById("overlay").style.display = "flex";
+
+    }
+
+    function cerrarImagen() {
+
+      document.getElementById("overlay").style.display = "none";
+
+    }
+
+    function mostrarBlog() {
+
+      document.getElementById("galeria").style.display = "none";
+
+      document.getElementById("blog").style.display = "block";
+
+      document.querySelector("header img").style.display = "none";
+
+      document.querySelector("header h1").textContent = "Blog Comunidad Lince";
+
+    }
+
+    function mostrarGaleria() {
+
+      document.getElementById("galeria").style.display = "flex";
+
+      document.getElementById("blog").style.display = "none";
+
+      document.querySelector("header img").style.display = "none";
+
+      document.querySelector("header h1").textContent = "Comunidad Lince UVM";
+
+    }
+
+    function mostrarInicio() {
+
+      document.getElementById("galeria").style.display = "flex";
+
+      document.getElementById("blog").style.display = "none";
+
+      document.querySelector("header img").style.display = "inline";
+
+      document.querySelector("header h1").textContent = "Comunidad Lince UVM";
+
+    }
 </script>
 </body>
 </html>
+Instagram
+Crea una cuenta o inicia sesión en Instagram. Comparte lo que te gusta con las personas que te entienden.
+ 
